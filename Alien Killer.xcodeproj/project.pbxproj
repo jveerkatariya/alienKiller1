@@ -12,9 +12,13 @@
 		2DE218DF1ADD7EE000F5569B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE218DE1ADD7EE000F5569B /* GameScene.swift */; };
 		2DE218E11ADD7EE000F5569B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE218E01ADD7EE000F5569B /* GameViewController.swift */; };
 		2DE218E41ADD7EE000F5569B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE218E21ADD7EE000F5569B /* Main.storyboard */; };
-		2DE218E61ADD7EE000F5569B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DE218E51ADD7EE000F5569B /* Images.xcassets */; };
 		2DE218E91ADD7EE000F5569B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DE218E71ADD7EE000F5569B /* LaunchScreen.xib */; };
 		2DE218F51ADD7EE000F5569B /* Alien_KillerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE218F41ADD7EE000F5569B /* Alien_KillerTests.swift */; };
+		2DE219021ADD7FDE00F5569B /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DE219001ADD7FDE00F5569B /* bgmusic.mp3 */; };
+		2DE219031ADD7FDE00F5569B /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DE219011ADD7FDE00F5569B /* torpedo.mp3 */; };
+		2DE219081ADD800B00F5569B /* alien@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE219051ADD800B00F5569B /* alien@2x.png */; };
+		2DE219091ADD800B00F5569B /* shuttle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE219061ADD800B00F5569B /* shuttle@2x.png */; };
+		2DE2190A1ADD800B00F5569B /* torpedo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE219071ADD800B00F5569B /* torpedo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +39,15 @@
 		2DE218DE1ADD7EE000F5569B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		2DE218E01ADD7EE000F5569B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2DE218E31ADD7EE000F5569B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2DE218E51ADD7EE000F5569B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2DE218E81ADD7EE000F5569B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2DE218EE1ADD7EE000F5569B /* Alien KillerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Alien KillerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE218F31ADD7EE000F5569B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DE218F41ADD7EE000F5569B /* Alien_KillerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alien_KillerTests.swift; sourceTree = "<group>"; };
+		2DE219001ADD7FDE00F5569B /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusic.mp3; sourceTree = "<group>"; };
+		2DE219011ADD7FDE00F5569B /* torpedo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedo.mp3; sourceTree = "<group>"; };
+		2DE219051ADD800B00F5569B /* alien@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien@2x.png"; sourceTree = "<group>"; };
+		2DE219061ADD800B00F5569B /* shuttle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuttle@2x.png"; sourceTree = "<group>"; };
+		2DE219071ADD800B00F5569B /* torpedo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torpedo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +93,8 @@
 				2DE218DC1ADD7EE000F5569B /* GameScene.sks */,
 				2DE218DE1ADD7EE000F5569B /* GameScene.swift */,
 				2DE218E01ADD7EE000F5569B /* GameViewController.swift */,
+				2DE218FE1ADD7F4700F5569B /* sprites.atlas */,
 				2DE218E21ADD7EE000F5569B /* Main.storyboard */,
-				2DE218E51ADD7EE000F5569B /* Images.xcassets */,
 				2DE218E71ADD7EE000F5569B /* LaunchScreen.xib */,
 				2DE218D81ADD7EE000F5569B /* Supporting Files */,
 			);
@@ -116,6 +124,34 @@
 				2DE218F31ADD7EE000F5569B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DE218FE1ADD7F4700F5569B /* sprites.atlas */ = {
+			isa = PBXGroup;
+			children = (
+				2DE219041ADD7FF000F5569B /* Images */,
+				2DE218FF1ADD7FAD00F5569B /* Sounds */,
+			);
+			name = sprites.atlas;
+			sourceTree = "<group>";
+		};
+		2DE218FF1ADD7FAD00F5569B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2DE219001ADD7FDE00F5569B /* bgmusic.mp3 */,
+				2DE219011ADD7FDE00F5569B /* torpedo.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		2DE219041ADD7FF000F5569B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2DE219051ADD800B00F5569B /* alien@2x.png */,
+				2DE219061ADD800B00F5569B /* shuttle@2x.png */,
+				2DE219071ADD800B00F5569B /* torpedo@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,10 +234,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE2190A1ADD800B00F5569B /* torpedo@2x.png in Resources */,
+				2DE219081ADD800B00F5569B /* alien@2x.png in Resources */,
+				2DE219021ADD7FDE00F5569B /* bgmusic.mp3 in Resources */,
 				2DE218E91ADD7EE000F5569B /* LaunchScreen.xib in Resources */,
-				2DE218E61ADD7EE000F5569B /* Images.xcassets in Resources */,
 				2DE218DD1ADD7EE000F5569B /* GameScene.sks in Resources */,
+				2DE219031ADD7FDE00F5569B /* torpedo.mp3 in Resources */,
 				2DE218E41ADD7EE000F5569B /* Main.storyboard in Resources */,
+				2DE219091ADD800B00F5569B /* shuttle@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
