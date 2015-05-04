@@ -33,9 +33,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
-            let skView = self.view as SKView
+            let skView = self.view as! SKView
             skView.showsFPS = true
             skView.showsNodeCount = true
             
@@ -46,26 +46,19 @@ class GameViewController: UIViewController {
             scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
-        }*/
+        }
     }
-
     
-    override func viewWillLayoutSubviews() {
-        var bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("bgmusic", withExtension: "mp3")!
-        
-        
-        backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: bgMusicURL , error: nil)!
-        backgroundMusicPlayer.numberOfLoops = -1
-        backgroundMusicPlayer.prepareToPlay()
-        backgroundMusicPlayer.play()
-        
-        var skView:SKView = self.view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        
-        var scene:SKScene = GameScene.sceneWithSize(skView.bounds.size)
-        
-        
+    
+    
+    
+    class GameScene: SKScene {
+        override func didMoveToView(view: SKView) {
+            /* Setup your scene here */
+            var background : SKSpriteNode = SKSpriteNode (imageNamed: "background.png")
+            background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+            self.addChild(background)
+        }
     }
         
         

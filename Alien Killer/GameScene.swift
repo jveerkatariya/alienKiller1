@@ -8,22 +8,71 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var player = SKSpriteNode()
+    var lastYieldTimeInterval:NSTimeInterval = NSTimeInterval()
+    var lastUpdateTimeInterval:NSTimeInterval = NSTimeInterval()
+    var aliensDestroyed:Int = 0
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
+       /* /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!";
         myLabel.fontSize = 65;
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
         
-        self.addChild(myLabel)
+        self.addChild(myLabel) */
     }
     
-    override func touchesBegan(touches: Set<AnyObject>, withEvent event: UIEvent){
-        /* Called when a touch begins */
+    override init(size:CGSize){
+    super.init(size: size)
+        self.backgroundColor = SKColor.blackColor()
         
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
+        player = SKSpriteNode(imageNamed:"shuttle")
+        
+        player.position = CGPointMake(self.frame.size.width/2, player.size.height/2 + 20)
+
+        self.addChild(player)
+        self.physicsWorld.gravity = CGVectorMake(0, 0)
+        self.physicsWorld.contactDelegate = self
+        
+        
+    }
+    
+    func addAlien() {
+        var alien:SKSpriteNode = SKSpriteNode(imageNamed: "alien")
+   
+
+    
+        init! (alien.physicsBody = SKPhysicsBody(rectangleOfSize: (CGSize) alien , center: alien(CGPoint)))
+        
+        alien.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize = alien, center: CGPoint,c)
+        
+        
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+
+    override func touchesBegan(touches: Set <NSObject>, withEvent event: UIEvent) {
+      
+      
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Called when a touch begins */
+   
+    for touch: AnyObject in touches {
+      let location = touch.locationInNode(self)
             
             let sprite = SKSpriteNode(imageNamed:"Spaceship")
             
@@ -36,10 +85,11 @@ class GameScene: SKScene {
             sprite.runAction(SKAction.repeatActionForever(action))
             
             self.addChild(sprite)
-        }
+    
+    }
     }
    
-    override func update(currentTime: CFTimeInterval) {
+     func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
-}
+
