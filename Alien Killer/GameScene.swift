@@ -15,6 +15,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastUpdateTimeInterval:NSTimeInterval = NSTimeInterval()
     var aliensDestroyed:Int = 0
     
+    let alienCategory:UInt32 = 0x1 << 1
+    let photonTorpedoCategory:UInt32 = 0x1 << 0
+    
+    
     override func didMoveToView(view: SKView) {
        /* /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -39,23 +43,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
     }
-    
-    func addAlien() {
-        var alien:SKSpriteNode = SKSpriteNode(imageNamed: "alien")
-   
-
-    
-        init! (alien.physicsBody = SKPhysicsBody(rectangleOfSize: (CGSize) alien , center: alien(CGPoint)))
-        
-        alien.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize = alien, center: CGPoint,c)
-        
-        
-    }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func addAlien() {
+        var alien:SKSpriteNode = SKSpriteNode(imageNamed: "alien")
+        
+       
+        
+        
+        
+        alien.physicsBody = SKPhysicsBody(rectangleOfSize: alien.size)
+        /* alien.physicsBody!.dynamic = true */
+        
+        alien.physicsBody!.categoryBitMask = alienCategory
+        alien.physicsBody!.contactTestBitMask = photonTorpedoCategory
+        alien.physicsBody!.collisionBitMask = 0
+        
+        
+        let minX = alien.size.width/2
+        let maxX = alien.size.width - alien.size.width/2
+        let rangeX = maxX-minX
+        
+        let position:CGFloat = CGFloat(arc4random()) % CGFloat(rangeX) + CGFloat(minX)
+        
+        
+    }
+
+   
 
     override func touchesBegan(touches: Set <NSObject>, withEvent event: UIEvent) {
       
@@ -71,23 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     /* Called when a touch begins */
    
-    for touch: AnyObject in touches {
-      let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-    
-    }
-    }
+     }
    
      func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
